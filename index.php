@@ -1,20 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- <form action="index.php" method="post">
+    <label for="">username:</label> <br>
+    <input type="text" name="username" id=""> <br>
+
+    <label for="">password:</label> <br>
+    <input type="password" name="password" id=""> <br>
+
+    <input type="submit" value="Log in">
+</form> -->
+
+
+<form action="index.php" method="post">
+    <label for="">quantity: </label> <br>
+    <input type="text" name="quantity">
+
+    <input type="submit" value="total">
+</form>
+</body>
+</html>
+
+
+
+
 <?php
 
-    //to declare vairable need dollar sign
-    $name = "Joanna Fernandez";
-    $food = "CheeseBurger";
-    $email = "fake@gmail.com";
-    $age = 21;
-    $users = 2;
-    $price = 4.99;
+    //get hold more value it is techinicaly array just getting and displaying i think
+    // echo "{$_GET["username"]} <br>";
+    // echo "{$_GET["password"]} <br>";
 
-    echo "Hello {$name}<br>";
-    echo "You like {$food}";
-    echo "<br>Your email is {$email}";
-    echo "<br>You are {$age} years old<br>";
-    echo "You are {$users} users online";
+    //post comes in when the password and username is in the url which is theres no security at all.
+    // echo "{$_POST["username"]}";
+    // echo "{$_POST["password"]}";
+    $item = "pizza";
+$price = 5.00;
+$total = null;
 
-    echo "Your pizza is \${$price}<br>";
+if(isset($_POST["quantity"])) {
+    $quantity = $_POST["quantity"];
+    $total = $quantity * $price;
+    echo "You have ordered {$quantity} x {$item}/s <br>";
+    echo "Your total is \${$total}";
+} else {
+    echo "Please enter a quantity.";
+}
 
 ?>
 
